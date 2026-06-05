@@ -83,7 +83,7 @@ for i in "Python":
     print(i,end=" ")
 '''
 
-
+'''
 #Nested Pattern
 
 for i in range(5):#i=01234
@@ -100,7 +100,7 @@ j = 01234
 """
 
 
-
+print("********************")
 #inc pattern or half pyramid
 
 for i in range(5):
@@ -125,7 +125,7 @@ j in range(4+1=5)->01234
 j = 0 1 2 3 4, j = 5 => F
 i = 5 -> Fasle
 """
-print("**********")
+print("********************")
 #dec pattern or inverted half pyramid
 
 n = 5
@@ -133,41 +133,176 @@ for i in range(n):
     for j in range(i,n):
         print(j,end = " ")
     print()
+print("********************")
+
+#full pyramid
+
+n=5
+for i in range(n):
+    for j in range(i,n):
+        print(" ",end = " ")
+
+    for j in range(i+1):
+        print("*",end=" ")
+
+    for j in range(i):
+        print("*",end=" ")
+    print()
+
+print("--------------------------")
+#Inverted full pyramid
+
+n=5
+for i in range(n):
+    for j in range(i+1):
+        print(" ",end = " ")
+
+    for j in range(i,n):
+        print("*",end=" ")
+
+    for j in range(i,n-1):
+        print("*",end=" ")
+    print()
+
+#Hollow Pattern
+
+n = 5
+for i in range(n):
+    for j in range(n):
+        print(i,end=" ")
+    print()
+
+print("--------------------------")
+
+for i in range(n):
+    for j in range(n):
+        print(j,end=" ")
+    print()
+
+
+print("--------------------------")
+#HOLLOW SQUARE
+for i in range(n):
+    for j in range(n):
+        if i == 0 or i == 4 or j == 0 or j == 4:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+
+print("--------------------------")
+
+#plus pttern
+
+for i in range(n):
+    for j in range(n):
+        if i == 2 or j == 2:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+
+print("--------------------------")
+
+#cross pttern
+
+for i in range(n):
+    for j in range(n):
+        if i == j or i+j==4:
+            print("*",end=" ")
+        else:
+            print(" ",end=" ")
+    print()
+
+
+print("--------------------------")
+
+#Hollow square with assci values
+
+c = 65
+for i in range(n):
+    for j in range(n):
+        if i == 0 or i == 4 or j == 0 or j == 4:
+            print("*",end=" ")
+        else:
+            print(chr(c),end=" ")
+            c+=1
+    print()
+
+'''
+
+
+#while loop
+'''
+syntax of while loop
+
+ 1
+variable-setup
+        2
+while condition:
+        3
+    #looping statement
+        4
+    #inc/dec
+
+1.inc while
+2.dec while
+3.infinite loop
+'''
+
+
+#inc
+'''
+i = 1
+while i<=5:
+    print(i)
+    i+=1
+
+print("--------------------------")
+#dec
+
+i = 10
+while i>=6:
+    print(i)
+    i-=1
+
+#infinite loop
+#1.based on condition true
 
 
 
+i = 10
+while True:
+    print(i)
+    i-=1
 
 
+#2.based on inc/dec
+
+i = 10
+while i>=6:
+    print(i)
+    i+=1
+'''
+
+#factorial
+#5 => 5*4*3*2*1 = 120
+
+v = int(input("Enter the value :"))
+f = 1
+for i in range(1,v+1):
+    f=f*i
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print("Factorial : ",f)
+"""
+i=1 => f = 1*1 = 1
+i=2 => f = 1*2 = 2
+i=3 => f = 2*3 = 6
+i=4 => f = 6*4 = 24
+i=5 => f = 24*5 = 120
+"""
 
 

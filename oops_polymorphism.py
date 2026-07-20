@@ -1,117 +1,152 @@
-#polymorphism
-#method overraiding/runtime polymorphism
+#Oops_polymorphism
+#Single class with multiple fuctions with same name
+#but pass the difrrent arguments
+
+class calcutor:
+    def add(self,a=None,b=None,c=None,d=None):
+        if a!=None and b!=None and c!=None and d!=None:
+            print("4 arguments add va,b,c,dalue : ", a + b + c + d)
+        elif a!=None and b!=None and c!=None:
+            print("3 arguments add value : ", a + b + c)
+        elif a!=None and b!=None:
+            print("2 arguments add value : ",a+b)
+        else:
+            print("1 arguments value : ",a)
+
+    # def add(self,a,b,c,d):
+    #     print("4 arguments add va,b,c,dalue : ",a+b+c+d)
+    #
+    # def add(self,a,b,c):
+    #     print("3 arguments add value : ",a+b+c)
+    #
+    # def add(self,a,b):
+    #     print("2 arguments add value : ",a+b)
+    #
+    # def add(self,a):
+    #     print("1 arguments value : ",a)
+
+# c = calcutor()
+# c.add(45)
+# c.add(45,60,45,67)
+# c.add(20,40,10)
+# c.add(20,40)
+
+# Method overriding
+# class book:
+#     def fun1(self):
+#         print("Book Name : Learn Java")
+# class author(book):
+#     def fun1(self):
+#         super().fun1()
+#         print("Author Name : Vinoth")
+# class price(author):
+#     def fun1(self):
+#         super().fun1()
+#         print("Book Price : 500")
+#
+# p = price()
+# p.fun1()
+
+#Operator Overloading
+
+# a = 45
+# b = " Kumar"
+# c = 10
+# # print(a+b)
+# print(a.__add__(b))
+# print(a.__add__(c))
+#
+# print(a.__sub__(c))
+# print(a.__sub__(b))
+
+
+# Abstraction in Python
 """
-we need multiple classes with inheritance--> carry on same functions
-"""
-
-class phone:
-    def fun1(self):
-        print("Talk with friends...")
-
-class smart_phone(phone):
-    def fun1(self):
-        super().fun1()
-        print("Talk and chat with your friends..")
-
-
-# sm = smart_phone()
-# sm.fun1()
-
-
-#Abstraction in python
-"""
-abc -> abstract base class module
-ABC -> abstract base class
-abstrcatmethod --> function
+abc -> module
+ABC -> bulid in class
+abstractmethod -> function
 """
 from abc import ABC,abstractmethod
-class ebook(ABC):#abstract class
+class Zoho(ABC):
     @abstractmethod
-    def source(self):
-        print("Book Name : Learn Python")
-        print("Author Name : Pradeepa")
-        print("Sensitive data")
-    def java_source(self):
-        print("Book Name : Learn java")
-        print("Author Name : praveen")
-        print("Sensitive data")
+    def zoho_pay(self):
+        print("Product Name : zoho pay")
+        print("Brand Name : zoho")
+        print("Brand Address : zoho")
+        print("Product Sensitive content")
 
-class vendor(ebook):
-    def source(self):
-        print("Book Name : Learn Python")
-        print("Author Name : Naga raj")
+    @abstractmethod
+    def zoho_school(self):
+        print("Product Name : zoho school")
+        print("Brand Name : zoho")
 
-# v = vendor()
-# v.source()
-# v.java_source()
+class users(Zoho):
+    def zoho_pay(self):
+        # super().zoho_pay()
+        print("Product Name : zoho pay")
+        print("Brand Name : zoho")
 
-#encapsulation
+    def zoho_school(self):
+        print("Product Name : zoho school")
+
+
+# u = users()
+# u.zoho_pay()
+
+#Encapsulation
 """
-we archive the using access modifier
-private => (__) => that property only access from inside class
-protected => (_) => that property aceces own class  and child class 
-public => that can be access any where and any one
+__variable => private
+_variable => protected
+variable => public
 """
-class ac_details:
+class Upi:
     name = "Praveen Kumar"
-    _ac_no = 123456786
+    _ac = 12566654324
     __pin = None
-    def setPin(self,p):
+    def __get_pin(self,p):
         self.__pin = p
-    def getName(self):
-        return self.name
-class bank(ac_details):
-    _ac_no = 876543225
-    def fun1(self):
-        print(self.name)
-        # print(self.__pin)
-# ac = ac_details()
-# print(ac.name)
-# print(ac.__pin)
-b = bank()
-b.fun1()
-b.setPin(3456)
+        # return self.__pin
+    def show(self,p):
+        self.__get_pin(p)
 
-name = b.getName()
-print("AC Holder Name :",name)
+class user(Upi):
+    def demo(self):
+        print(super().name)
+        # print(super().__pin)
 
+# u = Upi()
+# print(u.name)
+# # print(u.__pin)
+# # print(u._ac)
 
+# u.show(8765)
+# user().demo()
 
 
+# Constructor
+"""
+class class_name:
+    def __init__(self):
+        #block of code
+"""
+class Mobile:
+    brand = None
+    model = None
+    color = None
+    price = None
 
+    def __init__(self,**s):
+        # print(s)
+        self.brand = s.get("b")
+        self.model = s.get("m")
+        self.color = s.get("c")
+        self.price = s["p"]
+        print("Mobile Brand : ",self.brand)
+        print("Mobile Model : ",self.model)
+        print("Mobile color : ",self.color)
+        print("Mobile Price : ",self.price)
+        print("=========================")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# m1 = Mobile("Samsung","S26","black",85000)
+# m2 = Mobile("Realme","P3 Ultra","red",35000)
+# m3 = Mobile(b = "Apple",m = "Iphone 17",c = "Black",p = 120000)
